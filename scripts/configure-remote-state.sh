@@ -7,4 +7,4 @@ sed -i 's/#//g' backend.tf
 touch mykey
 touch mykey.pub
 terraform init
-terraform apply -target aws_ecs_service.myapp-service -var MYAPP_SERVICE_ENABLE="1" -var MYAPP_VERSION=${MYAPP_VERSION}
+terraform apply -auto-approve -var MYAPP_SERVICE_ENABLE=1 -target aws_ecs_service.myapp-service
