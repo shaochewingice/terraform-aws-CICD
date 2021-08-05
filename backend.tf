@@ -1,6 +1,6 @@
 #terraform {
 #  backend "s3" {
-#    bucket = "terraform-state-xx70dpnh"
+#    bucket = "shaochewingice-terraform-state-d3"
 #    key    = "terraform.tfstate"
 #    region = "us-east-1"
 #  }
