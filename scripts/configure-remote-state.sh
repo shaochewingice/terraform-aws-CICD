@@ -6,5 +6,6 @@ sed -i 's/terraform-state-xx70dpnh/'${S3_BUCKET}'/' backend.tf
 sed -i 's/#//g' backend.tf
 touch mykey
 touch mykey.pub
-terraform init
+aws s3 cp s3://${S3_BUCKET}/terraform.tfstate terraform.tfstate --region $AWS_REGION
+terraform init -force-copy
 terraform apply -auto-approve -var MYAPP_SERVICE_ENABLE=1 -target aws_ecs_service.myapp-service
