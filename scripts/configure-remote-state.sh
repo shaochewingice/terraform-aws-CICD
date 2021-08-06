@@ -8,4 +8,4 @@ touch mykey
 touch mykey.pub
 aws s3 cp s3://${S3_BUCKET}/terraform.tfstate terraform.tfstate --region $AWS_REGION
 terraform init -force-copy
-terraform apply -auto-approve -var MYAPP_SERVICE_ENABLE=1 -target aws_ecs_service.myapp-service
+terraform apply -auto-approve -var MYAPP_SERVICE_ENABLE=1 -var MYAPP_VERSION=${MYAPP_VERSION} -target aws_ecs_service.myapp-service
